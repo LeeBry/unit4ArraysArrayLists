@@ -46,7 +46,7 @@ public class ArrayMethods
            }
         }
     }
-    private void removeMiddle()
+    private void removeMiddle()// work on later [incomplete:E]
     {
      
         if (values.length % 2 == 0)
@@ -66,5 +66,46 @@ public class ArrayMethods
             
         }
         this.values= newArray;
+    }
+    private void moveEvens()//Move the evens in front of the array
+    { 
+        int [] newArrayEvens= new int[values.length];
+        int count=0;
+        for( int i=0; i<values.length; i++)
+        {
+            if (values[i]%2==0)
+            {
+                newArrayEvens[count]= this.values[i];
+                count++;
+            }
+            
+        }
+        int count2=0;
+        for( int i=0; i<values.length; i++)
+        {
+            if (values[i]%2 !=0)
+            {
+                newArrayEvens[count+count2]=values[i];
+            }
+            
+        }
+    }
+    private void secondLargest()
+    {
+        int largest=0;
+        for (int i=0; i<values.length; i++)
+        {
+            if (values[i]>largest)
+            {
+                largest= values[i];
+            }
+        }
+        for (int i=0; i<values.length; i++)
+        {
+            if (values[i]>largest)
+            {
+                largest= values[i];
+            }
+        }
     }
 }
