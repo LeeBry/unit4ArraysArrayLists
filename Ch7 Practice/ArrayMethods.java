@@ -59,7 +59,13 @@ public class ArrayMethods
         }
         int [] newArray= new int[size];
 
-        for (int i=0; i<values.length; i++)
+        for (int i=0; i<(values.length/2)-1; i++)
+        {
+         
+            newArray[i]= this.values[i];
+            
+        }
+        for (int i=(values.length/2); i<(values.length); i++)
         {
          
             newArray[i]= this.values[i];
@@ -100,11 +106,12 @@ public class ArrayMethods
                 largest= values[i];
             }
         }
+        int second=0;
         for (int i=0; i<values.length; i++)
         {
-            if (values[i]>largest)
+            if (values[i]!=largest && second>values[i])
             {
-                largest= values[i];
+                second= values[i];
             }
         }
     }
