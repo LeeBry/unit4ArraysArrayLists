@@ -34,12 +34,12 @@ public class Radar
     public Radar(int rows, int cols)
     {
         // initialize the currentScan 2D array and the accumulator 2D array
-        
-        
+
         //
         // !!! add code here !!!
         //
-        
+        currentScan= new boolean [rows][cols];
+        accumulator= new int [rows][cols];
         
         // randomly set the location of the monster (can be explicity set through the
         //  setMonsterLocation method for the unit test
@@ -63,7 +63,38 @@ public class Radar
         //    4. update the accumulator 2D array based on the state of the currentScan 2D array
         //    5. increment the numScans instance variable
         
+         //Setting all cells in the currentScan 2D array to false
+        for (int i=0; i< currentScan.length; i++)
+        {
+            for(int j=0; j<currentScan[i].length;j++)
+            {
+                currentScan[i][j]=false;
+            }
+        }
         
+    
+        //Setting monster location
+     
+        setMonsterLocation(monsterLocationRow,monsterLocationCol);
+        //Injecting noise
+        this.injectNoise();
+        
+        //Updating the accumulator array based on the state of the currentScan array
+        for (int i=0; i< accumulator.length; i++)
+        {
+            for(int j=0; j<accumulator[i].length;j++)
+            {
+                if( currentScan[i][j])
+                {
+                    this.accumulator[i][j]++;
+                  
+                }
+            }
+        }
+        
+        //Increment the numScans instance variable
+        int numScan= this.getNumScans();
+        this.numScans++;
         //
         // !!! add code here !!!
         //
@@ -170,6 +201,17 @@ public class Radar
         //
         // !!! add code here !!!
         //
+          for (int i=0; i< currentScan.length; i++)
+        {
+            for(int j=0; j<currentScan[i].length;j++)
+            {
+                double num= Math.random();
+                if (num <=this.noiseFraction)
+                {
+                    currentScan[i][j]=true;
+                }            
+            }
+        }
         
         
     }
