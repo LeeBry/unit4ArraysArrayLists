@@ -30,6 +30,7 @@ public class RadarViewer
         RadarComponent component = new RadarComponent(radar);
         frame.add(component);
         
+        
         // set the size of the frame to encompass the contained component
         frame.pack();
         
