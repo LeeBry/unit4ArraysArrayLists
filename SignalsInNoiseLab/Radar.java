@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * The model for radar scan and accumulator
  * 
@@ -43,9 +43,27 @@ public class Radar
         
         // randomly set the location of the monster (can be explicity set through the
         //  setMonsterLocation method for the unit test
-        monsterLocationRow = (int)(Math.random() * rows);
-        monsterLocationCol = (int)(Math.random() * cols);
-        
+        Scanner scan= new Scanner (System.in);
+        System.out.println("Do you want to set the monster location? (y/n)");
+        String choice= scan.next();
+        if (choice.equals("y"))
+        {
+            System.out.println("Give the row number of the monster");
+            int monsterLocationRow = scan.nextInt();
+            System.out.println("Give the columb number of the monster");
+            int monsterLocationCol = scan.nextInt();
+           
+         
+        }
+        else
+        {
+            monsterLocationRow = (int)(Math.random() * rows);
+            monsterLocationCol = (int)(Math.random() * cols);
+          
+        }
+        setMonsterLocation(monsterLocationRow,monsterLocationCol);
+
+          
         noiseFraction = 0.05;
         numScans= 0;
     }
