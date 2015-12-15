@@ -8,8 +8,8 @@ import org.junit.Test;
 /**
  * Write a description of test class RadarTest here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bryce Lee 
+ * @version 12/15/2015
  */
 public class RadarTest
 {
@@ -44,6 +44,12 @@ public class RadarTest
     public void tearDown()
     {
     }
-
+    
+    @Test
+    public void testInitialState()
+    {
+   
+      
+    }
     
 }

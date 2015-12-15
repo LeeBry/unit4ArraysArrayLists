@@ -52,16 +52,16 @@ public class Radar
             int monsterLocationRow = scan.nextInt();
             System.out.println("Give the columb number of the monster");
             int monsterLocationCol = scan.nextInt();
-           
+            setMonsterLocation(monsterLocationRow,monsterLocationCol);
          
         }
         else
         {
             monsterLocationRow = (int)(Math.random() * rows);
             monsterLocationCol = (int)(Math.random() * cols);
-          
+            setMonsterLocation(monsterLocationRow,monsterLocationCol);
         }
-        setMonsterLocation(monsterLocationRow,monsterLocationCol);
+        
 
           
         noiseFraction = 0.05;
