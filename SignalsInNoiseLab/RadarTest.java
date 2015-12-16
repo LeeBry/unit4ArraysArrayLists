@@ -48,8 +48,11 @@ public class RadarTest
     @Test
     public void testInitialState()
     {
-   
-      
+        Radar radar= new Radar(10,10);
+        // choose monster location
+        radar.setMonsterLocation(5,5);
+        // do the scan test
+        assertEquals (10,radar.getNumRows());
     }
     
 }
