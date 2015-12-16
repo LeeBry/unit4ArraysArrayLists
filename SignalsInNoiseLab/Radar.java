@@ -2,8 +2,8 @@ import java.util.Scanner;
 /**
  * The model for radar scan and accumulator
  * 
- * @author @gcschmit
- * @version 19 July 2014
+ * @author Bryce Lee
+ * @version 12/16/2015
  */
 public class Radar
 {
